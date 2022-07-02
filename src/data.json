@@ -1,0 +1,15 @@
+{
+    "navigation": {},
+    "pages": {
+        "Home": {
+            "message": "Two people to unite them all, two people to find them, two people to bring them all & in the happiness bind them"
+        },
+        "Engagement": {
+            "title": "Engagement",
+            "subtitle": "connecting people",
+            "location": "transalvania hotel",
+            "time": "3'o clock"
+        },
+        "Gallery": {}
+    }
+}
