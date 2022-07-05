@@ -10,21 +10,30 @@ export function Logo(props) {
 
   useEffect(() => {
     let delay = 0;
+    let animationSpeed = 0.3;
     pathRef.current.forEach((path, idx) => {
       if (path.id === 'dot') {
-        path.style.animation = `2s linear ${(idx - 1) * 0.5}s forwards drop`;
+        path.style.animation = `2s linear ${
+          (idx - 1) * animationSpeed
+        }s forwards drop`;
         return;
       }
 
       let pathLength = Math.ceil(path.getTotalLength());
       path.style.strokeDasharray = pathLength;
       path.style.strokeDashoffset = pathLength;
-      path.style.animation = `0.5s linear ${idx * 0.5}s forwards draw`;
-      delay = idx * 0.5;
+      path.style.animation = `0.4s linear ${
+        idx * animationSpeed
+      }s forwards draw`;
+      delay = idx * animationSpeed;
     });
-    //  width: 108.85000610351562, height: 48.38334655761719, top: 24.899993896484375, right: 123.68333435058594, bottom: 73.28334045410156, left: 14.833328247070312
-    // if (slideOnComplete)
-    //   logoRef.current.style.animation = '3s linear 12s forwards up';
+
+    console.log('total delay' + delay);
+
+    document.documentElement.style.setProperty(
+      '--up-animation-delay',
+      delay + 0.8 + 's'
+    );
   });
 
   return (

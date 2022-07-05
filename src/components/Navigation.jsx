@@ -4,26 +4,41 @@ function Navigation() {
   let logoRef = useRef({});
 
   useEffect(() => {
+    const NavbarState = {
+      OPENED: 1,
+      CLOSED: 2,
+    };
+    let navbarState = NavbarState.CLOSED;
+
     const hamburgerMenu = document.querySelector('.hamburger-icon');
     const navMenu = document.querySelector('.nav-menu');
-    console.log(hamburgerMenu);
+
     hamburgerMenu.addEventListener('click', function () {
-      if (!hamburgerMenu.dataset.opened) {
-        hamburgerMenu.dataset.opened = true;
-        delete navMenu.dataset.hidden;
-      } else {
-        delete hamburgerMenu.dataset.opened;
-        navMenu.dataset.hidden = true;
-      }
+      debugger;
+      handleNavbar();
     });
 
     const navLinks = document.querySelectorAll('.nav-menu a');
     navLinks.forEach((links) => {
       links.addEventListener('click', function () {
-        delete hamburgerMenu.dataset.opened;
-        navMenu.dataset.hidden = true;
+        handleNavbar();
       });
     });
+
+    function handleNavbar() {
+      switch (navbarState) {
+        case NavbarState.CLOSED:
+          navbarState = NavbarState.OPENED;
+          hamburgerMenu.dataset.opened = true;
+          delete navMenu.dataset.hidden;
+          break;
+        case NavbarState.OPENED:
+          navbarState = NavbarState.CLOSED;
+          delete hamburgerMenu.dataset.opened;
+          navMenu.dataset.hidden = true;
+          break;
+      }
+    }
   });
 
   return (
