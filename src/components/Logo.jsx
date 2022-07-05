@@ -24,17 +24,16 @@ export function Logo(props) {
     });
     //  width: 108.85000610351562, height: 48.38334655761719, top: 24.899993896484375, right: 123.68333435058594, bottom: 73.28334045410156, left: 14.833328247070312
     // if (slideOnComplete)
-    // logoRef.current.style.animation = '3s linear 12s forwards up';
+    //   logoRef.current.style.animation = '3s linear 12s forwards up';
   });
 
   return (
     <svg
       opacity={1}
       ref={logoRef}
-      width={width}
-      height={height}
+      width="100%"
+      height="100%"
       viewBox="0 0 288.0386 128.82685"
-      style={{ backgroundColor: '#3d3d41' }}
     >
       <defs>
         <filter id="shadow" x="0" y="0" width="200%" height="200%">
@@ -233,7 +232,7 @@ export function Logo(props) {
 
         <path
           ref={(el) => (pathRef.current[i++] = el)}
-          style={{ fill: '#f0d19a' }}
+          style={{ fill: 'var(--dot-fill)' }}
           id="dot"
           d="m 155.21686,198.09034 c 1.13513,-0.011 2.04489,-0.94297 2.02856,-2.07804 -0.005,-1.11846 -0.9101,-2.02404 -2.02856,-2.02882 -1.12799,0.001 -2.04964,0.90092 -2.07804,2.02856 0.006,1.14501 0.93303,2.07165 2.07804,2.0783 z"
         />

@@ -15,8 +15,6 @@ function App() {
       <Navigation></Navigation>
       <Home data={pageData}></Home>
     </>
-    // </div>
-    // <Intro></Intro>
   );
 }
 
