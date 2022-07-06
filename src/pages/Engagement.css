@@ -1,0 +1,56 @@
+.event#Engagement {
+  display: grid;
+  grid-template-rows: 200px 50px 150px repeat(2, 1fr);
+  place-items: center;
+  text-align: center;
+}
+
+.subs {
+  text-shadow: -0.5px 0 #d5d5d5, 0 0.5px #d5d5d5, 0.5px 0 #d5d5d5,
+    0 -0.5px #d5d5d5;
+}
+
+.hand-picture {
+  background-image: url('../../public/assets/images/connecting people.png');
+}
+
+.engagement_title {
+  /* margin-top: -13em; */
+  /* grid-area: 2 / 1 / 3 / 2; */
+}
+
+.engagment_rings_clank {
+  /* grid-area: 2 / 1 / 3 / 2; */
+  aspect-ratio: 1;
+  height: 131%;
+}
+
+.engagement_location {
+}
+
+.engagement_location > div:first-child {
+  display: flex;
+}
+
+.engagement_location > div:first-child::before {
+  content: '';
+  height: 2em;
+  width: 1em;
+  background-size: 100%;
+  background-image: url('../../public/assets/svg/bouncey_location.svg');
+  background-repeat: no-repeat;
+}
+
+.engagement_time > div:first-child {
+  display: flex;
+}
+
+.engagement_time > div:first-child::before {
+  content: '';
+  display: block;
+  height: 1.5em;
+  width: 1.5em;
+  background-size: 100%;
+  background-image: url('../../public/assets/svg/clock.svg');
+  background-repeat: no-repeat;
+}

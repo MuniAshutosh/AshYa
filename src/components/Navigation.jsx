@@ -14,7 +14,6 @@ function Navigation() {
     const navMenu = document.querySelector('.nav-menu');
 
     hamburgerMenu.addEventListener('click', function () {
-      debugger;
       handleNavbar();
     });
 
@@ -43,6 +42,10 @@ function Navigation() {
 
   return (
     <>
+      <div className="logo-intro">
+        <Logo logoRef={logoRef}></Logo>
+      </div>
+
       <nav className="nav-menu" data-hidden="true">
         <ul>
           <li>
@@ -85,10 +88,6 @@ function Navigation() {
         <div className="logo">
           <strong>Ash.Ya</strong>
         </div>
-      </div>
-
-      <div className="logo-intro">
-        <Logo logoRef={logoRef}></Logo>
       </div>
     </>
   );
