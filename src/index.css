@@ -67,6 +67,14 @@ a {
   --up-animation-delay: 6s;
 }
 
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+
 .grid {
   display: grid;
   grid-template-areas:
@@ -146,6 +154,7 @@ clipPath {
   place-content: center;
 
   padding: 1em;
+  background-color: hsla(0, 0%, 27%, 25%);
 }
 
 .hamburger-menu {
@@ -205,16 +214,7 @@ clipPath {
   overflow-x: hidden;
   display: grid;
   scrollbar-width: 0;
-  scroll-snap-type: y proximity;
-}
-
-body {
-  -ms-overflow-style: none; /* IE and Edge */
-
-  scrollbar-width: none; /* Firefox */
-}
-body::-webkit-scrollbar {
-  display: none;
+  scroll-snap-type: y mandatory;
 }
 
 .event {

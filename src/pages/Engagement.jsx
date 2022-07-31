@@ -5,11 +5,8 @@ import JsonData from '../data.json';
 const Engagement = () => {
   return (
     <>
-      <img
-        className="hand_picture"
-        src="/assets/images/connecting people.png"
-        alt=""
-      />
+      <div className="hand_picture"></div>
+
       <div className="engagement_title">
         <div className="font-country-side font-size-26">Engagement</div>
         <div

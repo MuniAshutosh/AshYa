@@ -1,6 +1,8 @@
 .event#Engagement {
   display: grid;
   grid-template-rows: 200px 50px 150px repeat(2, 1fr);
+  grid-template-columns: minmax(auto, 400px);
+  justify-content: center;
   place-items: center;
   text-align: center;
 }
@@ -10,9 +12,25 @@
     0 -0.5px #d5d5d5;
 }
 
-.hand-picture {
-  background-image: url('../../public/assets/images/connecting people.png');
+.hand_picture {
+  background-image: url('../../public/assets/images/holding_hands.jpg');
+  width: 413px;
+  height: 273px;
+  background-size: 413px 273px;
+  box-shadow: inset 0px 0px 78px 18px rgb(255 255 255 / 60%);
 }
+/* 
+.hand_picture::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.6);
+} */
 
 .engagement_title {
   /* margin-top: -13em; */
@@ -30,6 +48,7 @@
 
 .engagement_location > div:first-child {
   display: flex;
+  justify-content: center;
 }
 
 .engagement_location > div:first-child::before {
@@ -43,6 +62,7 @@
 
 .engagement_time > div:first-child {
   display: flex;
+  justify-content: center;
 }
 
 .engagement_time > div:first-child::before {
