@@ -1,0 +1,50 @@
+<svg width="363" height="600" viewBox="0 0 363 514" fill="none" xmlns="http://www.w3.org/2000/svg">
+<style>
+.bounce {
+animation: bounce 1.5s infinite ease-in-out;
+}
+
+#shadow {
+animation: zoominout 1.5s infinite ease-in-out;
+transform-origin: center;
+}
+
+@keyframes bounce {
+0% {
+transform: translateY(0);
+}
+50% {
+transform: translateY(-40px);
+}
+100% {
+transform: translateY(0);
+}
+}
+
+@keyframes zoominout {
+0% {
+transform: scaleX(1));
+opacity: 100%;
+}
+50% {
+transform: scaleX(0.25);
+opacity: 10%;
+}
+100% {
+transform: scaleX(1);
+opacity: 100%;
+}
+}
+</style>
+<path
+id = "outer-circle"
+class = "bounce"
+d="M335.9 275H335.8C352.5 247.6 362.1 215.4 362.1 181C362 81 281 0 181 0C81 0 0 81 0 181C0 215.4 9.6 247.6 26.3 275H26.2L27.8 277.4C30.4 281.5 33.1 285.5 36 289.3L168.2 481.9C174.5 490.4 187.2 490.4 193.5 481.9L325.8 289.5C328.8 285.5 331.6 281.5 334.2 277.3L335.9 275ZM181 43.4C254 43.4 313.1 102.6 313.1 175.5C313.1 248.4 254 307.6 181 307.6C108 307.6 48.9 248.5 48.9 175.5C48.9 102.5 108 43.4 181 43.4Z" fill="#EC221E"/>
+<path
+id = "inner-circle"
+class = "bounce"
+d="M181 83.4C231.8 83.4 273.1 124.7 273.1 175.5C273.1 226.3 231.8 267.6 181 267.6C130.2 267.6 88.9 226.3 88.9 175.5C88.9 124.7 130.2 83.4 181 83.4ZM181 43.4C108 43.4 48.9 102.6 48.9 175.5C48.9 248.4 108 307.6 181 307.6C254 307.6 313.1 248.4 313.1 175.5C313.1 102.6 254 43.4 181 43.4Z" fill="#D81212"/>
+<path
+id = "shadow"
+d="M181 513.6C221.648 513.6 254.6 509.526 254.6 504.5C254.6 499.474 221.648 495.4 181 495.4C140.352 495.4 107.4 499.474 107.4 504.5C107.4 509.526 140.352 513.6 181 513.6Z" fill="#333333"/>
+</svg>
