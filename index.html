@@ -681,12 +681,11 @@
             .third-page {
                 display: grid;
                 grid-template-areas:
-                    "heading heading"
-                    "top1 top2"
-                    "center center"
-                    "bottom1 bottom2";
+                    "heading "
+                    "top"
+                    "center"
+                    "bottom";
                 grid-template-rows: 10vh 30vh 30vh 30vh;
-                grid-template-columns: 50vw 50vw;
                 font-family: countryside;
                 font-size: 1.5em;
                 background-color: navajowhite;
@@ -698,18 +697,21 @@
                 place-self: center;
             }
 
-            .third-page .top1 {
-                grid-area: top1;
-            }
-
-            .third-page .top2 {
-                grid-area: top2;
-                place-self: center;
+            .third-page .top {
+                grid-area: top;
+                place-self: end;
+                padding-inline: 1em;
             }
 
             .third-page .center {
                 grid-area: center;
                 place-self: center;
+            }
+
+            .third-page .bottom {
+                grid-area: bottom;
+                place-self: start;
+                padding-inline: 1em;
             }
 
             @keyframes rotate {
@@ -738,26 +740,13 @@
                 /* text-shadow: 0.2px 0.2px 0 #000, -0.2px 0.2px 0 #000, 0.2px -0.2px 0 #000, -0.2px -0.2px 0 #000, 0px 0.2px 0 #000, 0px -0.2px 0 #000, -0.2px 0px 0 #000, 0.2px 0px 0 #000, 0.2px 0.2px 0 #000, -0.2px 0.2px 0 #000, 0.2px -0.2px 0 #000, -0.2px -0.2px 0 #000, 0px 0.2px 0 #000, 0px -0.2px 0 #000, -0.2px 0px 0 #000, 0.2px 0px 0 #000, 0.2px 0.2px 0 #000, -0.2px 0.2px 0 #000, 0.2px -0.2px 0 #000, -0.2px -0.2px 0 #000, 0.2px 0.2px 0 #000, -0.2px 0.2px 0 #000, 0.2px -0.2px 0 #000, -0.2px -0.2px 0 #000; */
 
             }
-
-            .third-page .bottom1 {
-
-                grid-area: bottom1;
-                place-self: center;
-            }
-
-            .third-page .bottom2 {
-
-                grid-area: bottom2;
-                place-self: center;
-            }
         </style>
 
         <section class="third-page rsvp">
             <div class="heading">
                 R.S.V.P.
             </div>
-            <div class="top1"></div>
-            <div class="top2">
+            <div class="top">
                 <p>Sasmita Muni</p>
                 <p>Prasanta Muni</p>
                 <!-- <p>Rourkela</p> -->
@@ -781,12 +770,11 @@
                 </svg>
 
             </div>
-            <div class="bottom1">
+            <div class="bottom">
                 <p>Namita Chinara</p>
                 <p>Pravat Chinara</p>
                 <!-- <p>Bhubaneshwar</p> -->
             </div>
-            <div class="bottom2"></div>
         </section>
 
 
