@@ -326,7 +326,8 @@
     </style>
 
 
-    <!-- Third page - haldi -->
+    <!-- Third page - RSVP -->
+
 
 
 </head>
@@ -676,9 +677,120 @@
         </section>
 
 
-        <section class="third-page haldi">
+        <style>
+            .third-page {
+                display: grid;
+                grid-template-areas:
+                    "heading heading"
+                    "top1 top2"
+                    "center center"
+                    "bottom1 bottom2";
+                grid-template-rows: 10vh 30vh 30vh 30vh;
+                grid-template-columns: 50vw 50vw;
+                font-family: countryside;
+                font-size: 1.5em;
+                background-color: navajowhite;
+                background-color: #ECDEDE;
+            }
 
+            .third-page .heading {
+                grid-area: heading;
+                place-self: center;
+            }
+
+            .third-page .top1 {
+                grid-area: top1;
+            }
+
+            .third-page .top2 {
+                grid-area: top2;
+                place-self: center;
+            }
+
+            .third-page .center {
+                grid-area: center;
+                place-self: center;
+            }
+
+            @keyframes rotate {
+                from {
+                    transform: rotate(360deg);
+                }
+
+                to {
+                    transform: rotate(0);
+                }
+            }
+
+            .third-page .center svg {
+
+                height: 100%;
+                width: 100%;
+                animation-duration: 10s;
+                animation-name: rotate;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+                font-size: 2.3rem;
+                font-weight: bolder;
+                font-family: countryside;
+                color: white;
+
+                /* text-shadow: 0.2px 0.2px 0 #000, -0.2px 0.2px 0 #000, 0.2px -0.2px 0 #000, -0.2px -0.2px 0 #000, 0px 0.2px 0 #000, 0px -0.2px 0 #000, -0.2px 0px 0 #000, 0.2px 0px 0 #000, 0.2px 0.2px 0 #000, -0.2px 0.2px 0 #000, 0.2px -0.2px 0 #000, -0.2px -0.2px 0 #000, 0px 0.2px 0 #000, 0px -0.2px 0 #000, -0.2px 0px 0 #000, 0.2px 0px 0 #000, 0.2px 0.2px 0 #000, -0.2px 0.2px 0 #000, 0.2px -0.2px 0 #000, -0.2px -0.2px 0 #000, 0.2px 0.2px 0 #000, -0.2px 0.2px 0 #000, 0.2px -0.2px 0 #000, -0.2px -0.2px 0 #000; */
+
+            }
+
+            .third-page .bottom1 {
+
+                grid-area: bottom1;
+                place-self: center;
+            }
+
+            .third-page .bottom2 {
+
+                grid-area: bottom2;
+                place-self: center;
+            }
+        </style>
+
+        <section class="third-page rsvp">
+            <div class="heading">
+                R.S.V.P.
+            </div>
+            <div class="top1"></div>
+            <div class="top2">
+                <p>Sasmita Muni</p>
+                <p>Prasanta Muni</p>
+                <!-- <p>Rourkela</p> -->
+            </div>
+            <div class="center">
+
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                    y="0px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
+                    <defs>
+                        <path id="circlePath" d="M 150 150 m -90 0 a 90 90 90 0 1 180 -1.5 a 90 90 90 0 1 -180 0" />
+                    </defs>
+                    <circle cx="150" cy="150" r="150" fill="none" />
+                    <g id="rotateText">
+                        <use xlink:href="#circlePath" fill="none" />
+                        <text>
+                            <textPath xlink:href="#circlePath" fill="seashell">
+                                Ashutosh . AshYa . Prangya . </textPath>
+                        </text>
+                    </g>
+
+                </svg>
+
+            </div>
+            <div class="bottom1">
+                <p>Namita Chinara</p>
+                <p>Pravat Chinara</p>
+                <!-- <p>Bhubaneshwar</p> -->
+            </div>
+            <div class="bottom2"></div>
         </section>
+
+
+
     </main>
 </body>
 
