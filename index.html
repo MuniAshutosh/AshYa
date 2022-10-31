@@ -618,6 +618,9 @@
             TweenMax.set(".path", {
                 drawSVG: '0%'
             })
+
+            gsap.set("body", { overflow: "hidden" })
+
             tl = gsap.timeline();
 
             tl.from(".ganesha", { opacity: 0, duration: 3 })
@@ -662,7 +665,7 @@
                         speed: .81
                     }, ease: "none"
                 })
-            tl.call(function () { videoEl.play() }, null, "intro+=2");
+            tl.call(function () { videoEl.play(); gsap.set("body", { overflow: "unset" }) }, null, "intro+=2");
 
             // tl.pause()
 
