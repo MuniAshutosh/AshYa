@@ -558,7 +558,7 @@
             </div>
 
             <div class="container">
-                <img src="./assets/pic2_4x3 ratio.jpeg" alt=""
+                <img src="./assets/pic1_4x3 ratio.jpeg" alt=""
                     srcset="./assets/pic1_4x3 ratio.jpeg, ./assets/pic2_4x3 ratio.jpeg">
                 <video src="./assets/v4.mp4" type="video/mp4" muted></video>
             </div>
@@ -571,10 +571,10 @@
         </section>
 
         <script>
-            const randomPicId = Math.round(Math.random()) + 1
-            const imgEl = document.querySelector(".first-page img")
+            // const randomPicId = Math.round(Math.random()) + 1
+            // const imgEl = document.querySelector(".first-page img")
             const videoEl = document.querySelector("video")
-            imgEl.src = `./assets/pic${randomPicId}_4x3 ratio.jpeg`
+            // imgEl.src = `./assets/pic${randomPicId}_4x3 ratio.jpeg`
             videoEl.playbackRate = 0.5
 
             text = "Two people to unite them all <br> Two people to find them <br> Two people to bring them all & <br> In the happiness bind them"
@@ -702,9 +702,25 @@
                 place-self: end;
                 font-family: gabriola;
                 font-size: 2rem;
-                line-height: 0.1px;
-                padding-block: 3rem;
-                padding-inline-end: 2rem;
+                line-height: 1em;
+                padding-bottom: 1em;
+                padding-right: 10vw;
+
+                display: grid;
+                align-items: center;
+                grid-template: "a b c d" 25vh
+                    / 30vw 25vw 25vw 10vw;
+            }
+
+
+            .third-page .top div:nth-child(1) {
+                grid-area: 1 / 1 / 2 / 4;
+            }
+
+            .third-page .top div:nth-child(2) {
+                grid-area: 1 / 3 / 2 / 5;
+                z-index: 2;
+
             }
 
             .third-page .center {
@@ -718,9 +734,39 @@
                 place-self: start;
                 font-family: gabriola;
                 font-size: 2rem;
-                line-height: 0.1px;
-                padding-block: 3rem;
-                padding-inline-start: 2rem;
+                line-height: 1em;
+                padding-top: 1em;
+                padding-left: 10vw;
+
+                display: grid;
+                align-items: center;
+                grid-template: "a b c d" 25vh
+                    / 20vw 15vw 25vw 25vw;
+            }
+
+            .third-page .bottom div:nth-child(1) {
+                position: absolute;
+                grid-area: 1 / 1 / 2 / 2;
+                z-index: 2;
+            }
+
+            .third-page .bottom div:nth-child(2) {
+                grid-area: 1 / 2 / 2 / 5;
+
+            }
+
+            .sp {
+                height: 25vh;
+                width: 63vw;
+                grid-row: unset;
+                position: unset;
+                object-fit: contain;
+                filter: unset;
+            }
+
+            .sp-top {
+                height: 29vh;
+                width: 45vw;
             }
 
             @keyframes rotate {
@@ -746,7 +792,6 @@
                 font-family: countryside;
                 color: white;
 
-                /* text-shadow: 0.2px 0.2px 0 #000, -0.2px 0.2px 0 #000, 0.2px -0.2px 0 #000, -0.2px -0.2px 0 #000, 0px 0.2px 0 #000, 0px -0.2px 0 #000, -0.2px 0px 0 #000, 0.2px 0px 0 #000, 0.2px 0.2px 0 #000, -0.2px 0.2px 0 #000, 0.2px -0.2px 0 #000, -0.2px -0.2px 0 #000, 0px 0.2px 0 #000, 0px -0.2px 0 #000, -0.2px 0px 0 #000, 0.2px 0px 0 #000, 0.2px 0.2px 0 #000, -0.2px 0.2px 0 #000, 0.2px -0.2px 0 #000, -0.2px -0.2px 0 #000, 0.2px 0.2px 0 #000, -0.2px 0.2px 0 #000, 0.2px -0.2px 0 #000, -0.2px -0.2px 0 #000; */
 
             }
         </style>
@@ -756,8 +801,15 @@
                 R.S.V.P.
             </div>
             <div class="top">
-                <p>Sasmita Muni</p>
-                <p>Prasanta Muni</p>
+                <div>
+
+                    <img class="sp sp-top" src="./assets/bg-top.jpg" alt="">
+                </div>
+                <div>
+                    Sasmita Muni<br>
+                    Prasanta Muni<br>
+                    Muskan Muni<br>
+                </div>
                 <!-- <p>Rourkela</p> -->
             </div>
             <div class="center">
@@ -780,9 +832,14 @@
 
             </div>
             <div class="bottom">
-                <p>Namita Chinara</p>
-                <p>Pravat Chinara</p>
-                <!-- <p>Bhubaneshwar</p> -->
+                <div>
+                    Namita Chinara <br />
+                    Pravat Chinara<br />
+                    Amit Chinara<br />
+                </div>
+                <div>
+                    <img class="sp" src="./assets/bg-bottom.jpg" alt="">
+                </div>
             </div>
         </section>
 
