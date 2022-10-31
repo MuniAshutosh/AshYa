@@ -105,7 +105,7 @@
             height: 100vh;
             width: 100vw;
             grid-area: 1/1/2/2;
-
+            /* display: grid; */
         }
 
         .container {
@@ -115,7 +115,14 @@
             grid-template-rows: 1fr;
             place-items: center;
             overflow: hidden;
+            /* justify-self: center; */
         }
+
+        /* @media only screen and (min-width: 600px) {
+            .container {
+                max-width: 50vw;
+            }
+        } */
 
         img {
             height: 100%;
@@ -326,6 +333,24 @@
     </style>
 
 
+    <style>
+        .ganesha {
+            position: absolute;
+            z-index: 4;
+            height: 100vh;
+            width: 100vw;
+            top: 0;
+            background: white;
+            display: grid;
+            place-items: center;
+        }
+
+        .ganesha img {
+            height: 33vh;
+            width: 33vw;
+        }
+    </style>
+
     <!-- Third page - RSVP -->
 
 
@@ -338,6 +363,12 @@
 
 
     <main>
+
+        <div class="ganesha">
+            <img src="./assets/Ganesha.png" alt="">
+        </div>
+
+
 
         <section class="intro-animation">
 
@@ -589,6 +620,9 @@
             })
             tl = gsap.timeline();
 
+            tl.from(".ganesha", { opacity: 0, duration: 3 })
+                .to(".ganesha", { opacity: 0, duration: 2 })
+
             writeTL = gsap.timeline()
             writeTL.timeScale(2);
             window.scrollTo(0, 0)
@@ -630,6 +664,7 @@
                 })
             tl.call(function () { videoEl.play() }, null, "intro+=2");
 
+            // tl.pause()
 
         </script>
 
@@ -723,7 +758,6 @@
                 text-align: end;
                 justify-self: end;
                 position: absolute;
-
             }
 
             .third-page .center {
