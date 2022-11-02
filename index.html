@@ -669,6 +669,10 @@
                         speed: .81
                     }, ease: "none"
                 })
+
+            // TODO: Add the scroll down animation
+
+
             tl.call(function () { videoEl.play(); gsap.set("body", { overflow: "unset" }) }, null, "intro+=2");
 
             // tl.pause()
@@ -732,6 +736,7 @@
                 font-size: 1.5em;
                 background-color: navajowhite;
                 background-color: #ECDEDE;
+                justify-items: center;
             }
 
             .third-page .heading {
@@ -741,17 +746,17 @@
 
             .third-page .top {
                 grid-area: top;
-                place-self: end;
+                /* place-self: end; */
                 font-family: gabriola;
-                font-size: 2rem;
+                font-size: 1.6rem;
                 line-height: 1em;
-                padding-bottom: 1em;
-                padding-right: 5vw;
+                /* padding-bottom: 1em; */
+                /* padding-right: 5vw; */
 
                 display: grid;
                 align-items: center;
                 grid-template: "a b c d" 25vh
-                    / 30vw 10vw 25vw 25vw;
+                    / 35vw 10vw 25vw 25vw;
             }
 
 
@@ -763,8 +768,8 @@
                 grid-area: 1 / 3 / 2 / 5;
                 z-index: 2;
                 text-align: end;
-                justify-self: end;
-                position: absolute;
+                justify-self: center;
+                /* position: absolute; */
                 text-shadow: 1px 0px white;
             }
 
@@ -776,17 +781,17 @@
 
             .third-page .bottom {
                 grid-area: bottom;
-                place-self: start;
+                /* place-self: start; */
                 font-family: gabriola;
-                font-size: 2rem;
+                font-size: 1.6rem;
                 line-height: 1em;
-                padding-top: 1em;
-                padding-left: 10vw;
+                /* padding-top: 1em; */
+                /* padding-left: 10vw; */
 
                 display: grid;
                 align-items: center;
                 grid-template: "a b c d" 25vh
-                    / 20vw 15vw 25vw 25vw;
+                    / 20vw 20vw 25vw 30vw;
             }
 
             .third-page .bottom div:nth-child(1) {
@@ -798,12 +803,13 @@
 
             .third-page .bottom div:nth-child(2) {
                 grid-area: 1 / 2 / 2 / 5;
+                justify-self: end;
 
             }
 
             .sp {
                 height: 25vh;
-                width: 63vw;
+                width: 55vw;
                 grid-row: unset;
                 position: unset;
                 object-fit: contain;
