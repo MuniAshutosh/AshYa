@@ -58,6 +58,7 @@
 
     </script>
 
+    <!-- Fonts and other common styles -->
     <style>
         @font-face {
             font-family: countryside;
@@ -92,8 +93,10 @@
             display: grid;
             grid-template:
                 "first" 100vh
-                "second" 100vh
-                "third" 100vh;
+                "engagement" 100vh
+                "wedding" 100vh
+                "rsvppage" 100vh;
+
         }
     </style>
 
@@ -148,7 +151,6 @@
             grid-row: 1/2;
             position: absolute;
             object-fit: cover;
-            filter: grayscale(0.6);
         }
 
         video {
@@ -263,7 +265,7 @@
     </style>
 
 
-    <!-- Second page styles -->
+    <!-- Engagement page styles -->
     <style>
         img.done {
             z-index: 2;
@@ -274,7 +276,7 @@
         }
 
         .second-page {
-            grid-area: second;
+            grid-area: engagement;
             display: grid;
             grid-template:
                 "title" 2fr
@@ -317,7 +319,7 @@
             object-fit: contain;
         }
 
-        .second-page .location {
+        .location {
             grid-area: location;
             display: flex;
             flex-direction: column;
@@ -326,7 +328,7 @@
             justify-content: center;
         }
 
-        .second-page .timing {
+        .timing {
             grid-area: timing;
             display: flex;
             flex-direction: row;
@@ -334,7 +336,7 @@
             justify-content: space-evenly;
         }
 
-        .second-page .timing div {
+        .timing div {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -425,7 +427,7 @@
         }
     </style>
 
-
+    <!-- Ganesha logo style -->
     <style>
         .ganesha {
             position: absolute;
@@ -444,8 +446,135 @@
         }
     </style>
 
-    <!-- Third page - RSVP -->
 
+
+    <!-- RSVP page -->
+    <style>
+        .rsvp-page {
+            display: grid;
+            grid-area: rsvppage;
+            grid-template-areas:
+                "heading "
+                "top"
+                "center"
+                "bottom";
+            grid-template-rows: 10vh 30vh 30vh 30vh;
+            font-family: countryside;
+            font-size: 1.5em;
+            background-color: navajowhite;
+            background-color: #ECDEDE;
+            justify-items: center;
+        }
+
+        .rsvp-page .heading {
+            grid-area: heading;
+            place-self: center;
+        }
+
+        .rsvp-page .top {
+            grid-area: top;
+            /* place-self: end; */
+            font-family: gabriola;
+            font-size: 1.6rem;
+            line-height: 1em;
+            /* padding-bottom: 1em; */
+            /* padding-right: 5vw; */
+
+            display: grid;
+            align-items: center;
+            grid-template: "a b c d" 25vh
+                / 35vw 10vw 25vw 25vw;
+        }
+
+
+        .rsvp-page .top div:nth-child(1) {
+            grid-area: 1 / 1 / 2 / 4;
+        }
+
+        .rsvp-page .top div:nth-child(2) {
+            grid-area: 1 / 3 / 2 / 5;
+            z-index: 2;
+            text-align: end;
+            justify-self: center;
+            /* position: absolute; */
+            text-shadow: 1px 0px white;
+        }
+
+        .rsvp-page .center {
+            grid-area: center;
+            place-self: center;
+            overflow: hidden;
+        }
+
+        .rsvp-page .bottom {
+            grid-area: bottom;
+            /* place-self: start; */
+            font-family: gabriola;
+            font-size: 1.6rem;
+            line-height: 1em;
+            /* padding-top: 1em; */
+            /* padding-left: 10vw; */
+
+            display: grid;
+            align-items: center;
+            grid-template: "a b c d" 25vh
+                / 20vw 20vw 25vw 30vw;
+        }
+
+        .rsvp-page .bottom div:nth-child(1) {
+            position: absolute;
+            grid-area: 1 / 1 / 2 / 2;
+            z-index: 2;
+            text-shadow: 1px 0px white;
+        }
+
+        .rsvp-page .bottom div:nth-child(2) {
+            grid-area: 1 / 2 / 2 / 5;
+            justify-self: end;
+            align-self: baseline;
+
+        }
+
+        .sp {
+            height: 25vh;
+            width: 55vw;
+            grid-row: unset;
+            position: unset;
+            object-fit: contain;
+            filter: unset;
+        }
+
+        .sp-top {
+            height: 29vh;
+            width: 45vw;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(360deg);
+            }
+
+            to {
+                transform: rotate(0);
+            }
+        }
+
+        .rsvp-page .center svg {
+
+            height: 100%;
+            width: 100%;
+            animation-duration: 10s;
+            animation-name: rotate;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            font-size: 2.3rem;
+            font-weight: bolder;
+            font-family: countryside;
+            color: white;
+
+
+        }
+    </style>
 
 
 </head>
@@ -768,6 +897,7 @@
                 .from(".chevron-container", { opacity: 0 }, ">+3")
 
             // TODO: Add the scroll down animation
+            tl.timeScale(5)
 
 
             tl.call(function () { videoEl.play(); gsap.set("body", { overflow: "unset" }) }, null, "intro+=2");
@@ -842,134 +972,137 @@
 
         </script>
 
+        <!-- Wedding page styles -->
 
         <style>
-            .third-page {
-                display: grid;
-                grid-template-areas:
-                    "heading "
-                    "top"
-                    "center"
-                    "bottom";
-                grid-template-rows: 10vh 30vh 30vh 30vh;
-                font-family: countryside;
-                font-size: 1.5em;
-                background-color: navajowhite;
-                background-color: #ECDEDE;
-                justify-items: center;
-            }
-
-            .third-page .heading {
-                grid-area: heading;
-                place-self: center;
-            }
-
-            .third-page .top {
-                grid-area: top;
-                /* place-self: end; */
-                font-family: gabriola;
-                font-size: 1.6rem;
-                line-height: 1em;
-                /* padding-bottom: 1em; */
-                /* padding-right: 5vw; */
-
-                display: grid;
-                align-items: center;
-                grid-template: "a b c d" 25vh
-                    / 35vw 10vw 25vw 25vw;
-            }
-
-
-            .third-page .top div:nth-child(1) {
-                grid-area: 1 / 1 / 2 / 4;
-            }
-
-            .third-page .top div:nth-child(2) {
-                grid-area: 1 / 3 / 2 / 5;
-                z-index: 2;
-                text-align: end;
-                justify-self: center;
-                /* position: absolute; */
-                text-shadow: 1px 0px white;
-            }
-
-            .third-page .center {
-                grid-area: center;
-                place-self: center;
+            .wedding-page {
+                grid-area: wedding;
                 overflow: hidden;
+                display: flex;
+                flex-direction: column;
             }
 
-            .third-page .bottom {
-                grid-area: bottom;
-                /* place-self: start; */
-                font-family: gabriola;
-                font-size: 1.6rem;
-                line-height: 1em;
-                /* padding-top: 1em; */
-                /* padding-left: 10vw; */
-
-                display: grid;
+            .wedding-page .title {
+                grid-area: title;
+                display: flex;
+                flex-direction: column;
                 align-items: center;
-                grid-template: "a b c d" 25vh
-                    / 20vw 20vw 25vw 30vw;
-            }
-
-            .third-page .bottom div:nth-child(1) {
-                position: absolute;
-                grid-area: 1 / 1 / 2 / 2;
-                z-index: 2;
-                text-shadow: 1px 0px white;
-            }
-
-            .third-page .bottom div:nth-child(2) {
-                grid-area: 1 / 2 / 2 / 5;
-                justify-self: end;
-                align-self: baseline;
-
-            }
-
-            .sp {
-                height: 25vh;
-                width: 55vw;
-                grid-row: unset;
-                position: unset;
-                object-fit: contain;
-                filter: unset;
-            }
-
-            .sp-top {
-                height: 29vh;
-                width: 45vw;
-            }
-
-            @keyframes rotate {
-                from {
-                    transform: rotate(360deg);
-                }
-
-                to {
-                    transform: rotate(0);
-                }
-            }
-
-            .third-page .center svg {
-
-                height: 100%;
+                justify-content: flex-end;
+                align-content: center;
+                background: url(./assets/knot.png) center;
+                /* background-size: contain; */
+                background-repeat: no-repeat;
+                box-shadow: inset 0px 0px 78px 18px rgb(255 255 255 / 60%);
+                filter: blur(50%);
+                object-fit: cover;
                 width: 100%;
-                animation-duration: 10s;
-                animation-name: rotate;
-                animation-iteration-count: infinite;
-                animation-timing-function: linear;
-                font-size: 2.3rem;
-                font-weight: bolder;
-                font-family: countryside;
-                color: white;
+                max-width: 100%;
+                height: 48%;
+            }
 
 
+            .wedding-page p {
+                margin-block: 0;
+            }
+
+            .wedding-page img {
+
+                height: unset;
+                width: unset;
+
+
+                max-width: 100%;
+                position: none;
+                object-fit: none;
+                filter: none;
+
+            }
+
+            .wedding-page .varmala {
+                display: flex;
+                justify-content: center;
+            }
+
+            .wedding-page .location {
+                padding-bottom: 16px;
+            }
+
+            .wedding-page .timing {
+                padding-bottom: 16px;
+            }
+
+
+
+
+            .wedding-page .location {
+                margin-top: auto;
+            }
+
+            .varmala-hawan {
+                height: 50%;
+                position: relative;
+                top: -9%;
+                z-index: -1;
+                transform: scale(0.9);
+            }
+
+            .varmala-hawan .varmala {}
+
+            .varmala-hawan .hawan {
+                position: absolute;
+                transform: translateX(61px) translateY(182px) scale(0.6);
             }
         </style>
 
-        <section class="third-page rsvp">
+
+        <section class="wedding-page">
+
+            <div class="title">
+                <p class="font-country-side font-size-26">Wedding</p>
+                <p class="font-gabriola font-size-30 subs" style="margin-top: -0.5em;">knotted together</p>
+            </div>
+
+            <div class="varmala-hawan">
+                <img src="./assets/varmala.gif" class="varmala" alt="" srcset="">
+                <img src="./assets/hawan.gif" class="hawan" alt="" srcset="">
+            </div>
+
+            <div class="location">
+                <p class="font-country-side font-size-26 icon d-flex ">Location</p>
+                <p class="font-gabriola font-size-30 subs"> <a target="_blank" class="link"
+                        href="https://goo.gl/maps/rdap2zT4FhTfPdF98">Sai Resort, Bhubaneshwar</a>
+                    <svg class="hidden" fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"
+                        height="1rem">
+                        <path
+                            d="M 41.470703 4.9863281 A 1.50015 1.50015 0 0 0 41.308594 5 L 27.5 5 A 1.50015 1.50015 0 1 0 27.5 8 L 37.878906 8 L 22.439453 23.439453 A 1.50015 1.50015 0 1 0 24.560547 25.560547 L 40 10.121094 L 40 20.5 A 1.50015 1.50015 0 1 0 43 20.5 L 43 6.6894531 A 1.50015 1.50015 0 0 0 41.470703 4.9863281 z M 12.5 8 C 8.3754991 8 5 11.375499 5 15.5 L 5 35.5 C 5 39.624501 8.3754991 43 12.5 43 L 32.5 43 C 36.624501 43 40 39.624501 40 35.5 L 40 25.5 A 1.50015 1.50015 0 1 0 37 25.5 L 37 35.5 C 37 38.003499 35.003499 40 32.5 40 L 12.5 40 C 9.9965009 40 8 38.003499 8 35.5 L 8 15.5 C 8 12.996501 9.9965009 11 12.5 11 L 22.5 11 A 1.50015 1.50015 0 1 0 22.5 8 L 12.5 8 z" />
+                    </svg>
+                </p>
+            </div>
+
+            <div class="timing">
+                <div class="date">
+                    <p class="font-country-side font-size-26 icon d-flex ">Date</p>
+                    <p class="font-gabriola font-size-30 subs" style="    text-align: center;
+            line-height: 0.9;">
+                        22nd February, 2023 <br> Wednesday
+                    </p>
+
+                </div>
+                <div class="time">
+                    <p class="font-country-side font-size-26 icon d-flex ">Time</p>
+                    <p class="font-gabriola font-size-30 subs">
+                        8PM
+                    </p>
+                </div>
+
+            </div>
+
+
+
+        </section>
+
+
+        <section class="rsvp-page rsvp">
             <div class="heading">
                 R.S.V.P.
             </div>
