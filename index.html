@@ -282,6 +282,7 @@
                 "location" 1fr
                 "timing" 1fr;
             gap: 1rem;
+            overflow: hidden;
         }
 
         .second-page p {
@@ -825,7 +826,7 @@
 
             ScrollTrigger.create({
                 trigger: "img.done",
-                start: "center center",
+                start: "bottom bottom",
                 once: true,
                 onEnter: function () {
                     gsap.fromTo("img.done", {
