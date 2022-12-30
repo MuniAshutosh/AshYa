@@ -383,7 +383,7 @@
             height: 1em;
             width: 1em;
             background-size: 100%;
-            background-image: url('./assets/clock.svg');
+            background-image: url('./assets/clock-11.svg');
             background-repeat: no-repeat;
         }
 
@@ -394,7 +394,7 @@
             height: 1em;
             width: 1em;
             background-size: 100%;
-            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAABnklEQVRoge2aMUvDQBiGH0VE3LoJ7oo4uji4ufQHiINQd8HBpYOTOKq7UEfx7zi7N0ugBXGxg4MOOcPFXppe/b70Eu6B48gleb9777vkrqEwP10gAb5NGZo2KbT1c4ZWEDtYU/RzfsXLjpeqvyrYkaViGzkHxkynt2pkyq73Lb76Y6DnumHkGVDKwH/0R7OcV43MvNf74qtfON/KZ6SKxNT2SCQl1y6CmH5VKrsU3/UaC6KPfml/pee8NvEZCZo1R1uTpldOqzOyUnsvFqMwc1qTkWgkNKKR0IhGQqMOIz1gABzXEAvQ2f3uAxOjeyWsXdvudx14MbU6mkZugD3gSTFGjmuvJcEB0AdugQ+lGAU0MrIBPANvwL2CvhONjNwBO8Ah8KWg70Q6I0fAJfAAvAprz0Q6I2dkv2e2ydYOyF7BAKfALnAhHHMKiXXk0dJxFcmppvo5aBPo/Cl9o3ttjqUo9Fd6an2aYjOx6nfheDmt2TTaxC+NIRCNhEY0EhrRSGhEI6Fh77VSYItmre6pq/HEnND6R4N0SU2fI0HyAwaY61b7ddYFAAAAAElFTkSuQmCC');
+            background-image: url('./assets/cal-4.svg');
             background-repeat: no-repeat;
         }
 
@@ -992,12 +992,13 @@
                 background: url(./assets/knot.png) center;
                 /* background-size: contain; */
                 background-repeat: no-repeat;
-                box-shadow: inset 0px 0px 78px 18px rgb(255 255 255 / 60%);
+                /* box-shadow: inset 0px 0px 78px 18px rgb(255 255 255 / 60%); */
                 filter: blur(50%);
                 object-fit: cover;
                 width: 100%;
                 max-width: 100%;
                 height: 48%;
+                background-position-y: -128px;
             }
 
 
@@ -1031,6 +1032,13 @@
                 padding-bottom: 16px;
             }
 
+            .wedding-page .timing .date .icon::before {
+                background-image: url('./assets/cal-22.svg');
+            }
+
+            .wedding-page .timing .time .icon::before {
+                background-image: url('./assets/clock-8.svg');
+            }
 
 
 
@@ -1046,11 +1054,9 @@
                 transform: scale(0.9);
             }
 
-            .varmala-hawan .varmala {}
-
             .varmala-hawan .hawan {
                 position: absolute;
-                transform: translateX(61px) translateY(182px) scale(0.6);
+                transform: translateX(70px) translateY(185px) scale(0.6);
             }
         </style>
 
@@ -1070,7 +1076,8 @@
             <div class="location">
                 <p class="font-country-side font-size-26 icon d-flex ">Location</p>
                 <p class="font-gabriola font-size-30 subs"> <a target="_blank" class="link"
-                        href="https://goo.gl/maps/rdap2zT4FhTfPdF98">Sai Resort, Bhubaneshwar</a>
+                        href="https://goo.gl/maps/jg5MwXCB7tZc2M3u7">
+                        Shree Sai Resort, Bhubaneshwar</a>
                     <svg class="hidden" fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"
                         height="1rem">
                         <path
