@@ -9,12 +9,12 @@
   </g>
   <style>
   .iconic-clock-hour-hand {
-      transform: rotate(240deg);
+      transform: rotate(215deg);
       transform-origin: center;
   }
 
   .iconic-clock-minute-hand{
-    transform: rotate(0deg);
+    transform: rotate(180deg);
       transform-origin: center;
   }
   .iconic-clock-second-hand{
