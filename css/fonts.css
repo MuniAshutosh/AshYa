@@ -1,0 +1,42 @@
+/* Fonts */
+
+@font-face {
+  font-family: countryside;
+  src: url(../fonts/Countryside-regular.ttf);
+}
+
+@font-face {
+  font-family: mallaire;
+  src: url(../fonts/Mallaire-x3njV.otf);
+}
+
+@font-face {
+  font-family: 'gabriola';
+  font-style: normal;
+  font-weight: normal;
+  src: url(../fonts/gabriola.woff) format('woff');
+}
+
+.font-gabriola {
+  font-family: 'gabriola';
+}
+
+.font-malliare {
+  font-family: 'malliare';
+}
+
+.font-country-side {
+  font-family: 'countryside';
+}
+
+.font-size-30 {
+  font-size: 26px;
+}
+
+.font-size-26 {
+  font-size: 26px;
+}
+
+.font-size-20 {
+  font-size: 20px;
+}

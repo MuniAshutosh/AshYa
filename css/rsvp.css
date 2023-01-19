@@ -1,0 +1,120 @@
+.rsvp-page {
+  display: grid;
+  grid-area: rsvppage;
+  grid-template-areas:
+    'heading '
+    'top'
+    'center'
+    'bottom';
+  grid-template-rows: 10vh 30vh 30vh 30vh;
+  font-family: countryside;
+  font-size: 1.5em;
+  background-color: #ecdede;
+  justify-items: center;
+}
+
+.rsvp-page .heading {
+  grid-area: heading;
+  place-self: center;
+}
+
+.rsvp-page .top {
+  grid-area: top;
+  /* place-self: end; */
+  font-family: gabriola;
+  font-size: 1.6rem;
+  line-height: 1em;
+  /* padding-bottom: 1em; */
+  /* padding-right: 5vw; */
+
+  display: grid;
+  align-items: center;
+  grid-template:
+    'a b c d' 25vh
+    / 35vw 10vw 25vw 25vw;
+}
+
+.rsvp-page .top div:nth-child(1) {
+  grid-area: 1 / 1 / 2 / 4;
+}
+
+.rsvp-page .top div:nth-child(2) {
+  grid-area: 1 / 3 / 2 / 5;
+  z-index: 2;
+  text-align: end;
+  justify-self: center;
+  /* position: absolute; */
+  text-shadow: 1px 0px white;
+}
+
+.rsvp-page .center {
+  grid-area: center;
+  place-self: center;
+  overflow: hidden;
+}
+
+.rsvp-page .bottom {
+  grid-area: bottom;
+  /* place-self: start; */
+  font-family: gabriola;
+  font-size: 1.6rem;
+  line-height: 1em;
+  /* padding-top: 1em; */
+  /* padding-left: 10vw; */
+
+  display: grid;
+  align-items: center;
+  grid-template:
+    'a b c d' 25vh
+    / 20vw 20vw 25vw 30vw;
+}
+
+.rsvp-page .bottom div:nth-child(1) {
+  position: absolute;
+  grid-area: 1 / 1 / 2 / 2;
+  z-index: 2;
+  text-shadow: 1px 0px white;
+}
+
+.rsvp-page .bottom div:nth-child(2) {
+  grid-area: 1 / 2 / 2 / 5;
+  justify-self: end;
+  align-self: baseline;
+}
+
+.sp {
+  height: 25vh;
+  width: 55vw;
+  grid-row: unset;
+  position: unset;
+  object-fit: contain;
+  filter: unset;
+}
+
+.sp-top {
+  height: 29vh;
+  width: 45vw;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0);
+  }
+}
+
+.rsvp-page .center svg {
+  height: 100%;
+  width: 100%;
+  animation-duration: 10s;
+  animation-name: rotate;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  font-size: 2.3rem;
+  font-weight: bolder;
+  font-family: countryside;
+  color: white;
+}

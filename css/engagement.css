@@ -1,0 +1,116 @@
+img.done {
+  object-fit: contain;
+  transform: translateY(-40px);
+  opacity: 0;
+}
+
+.engagement {
+  display: grid;
+  grid-template:
+    'title' 2fr
+    'gif' 1fr
+    'location' 1fr
+    'timing' 1fr;
+  gap: 1rem;
+  overflow: hidden;
+}
+
+.engagement p {
+  margin: 0;
+}
+
+.engagement .title {
+  grid-area: title;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  align-content: center;
+  background: url(../assets/holding_hands.jpg) center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  box-shadow: inset 0px 0px 78px 18px rgb(255 255 255 / 60%);
+  filter: blur(50%);
+  object-fit: cover;
+  width: 100%;
+  max-width: 100%;
+}
+
+.engagement .ring-gif {
+  grid-area: gif;
+  position: relative;
+}
+
+.engagement .ring-gif img {
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.location {
+  grid-area: location;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.timing {
+  grid-area: timing;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.timing div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.subs {
+  text-shadow: -0.5px 0 #d5d5d5, 0 0.5px #d5d5d5, 0.5px 0 #d5d5d5,
+    0 -0.5px #d5d5d5;
+}
+
+.location .icon::before {
+  content: '';
+  display: block;
+  height: 2em;
+  width: 1em;
+  background-size: 100%;
+  background-image: url('../assets/bouncey_location.svg');
+  background-repeat: no-repeat;
+}
+
+.timing .time .icon::before {
+  content: '';
+  display: block;
+  height: 1em;
+  width: 1em;
+  background-size: 100%;
+  background-image: url('../assets/clock-11.svg');
+  background-repeat: no-repeat;
+}
+
+.timing .date .icon::before {
+  content: '';
+  display: block;
+  height: 1em;
+  width: 1em;
+  background-size: 100%;
+  background-image: url('../assets/cal-4.svg');
+  background-repeat: no-repeat;
+}
+
+.d-flex {
+  display: flex;
+  align-items: center;
+  gap: 0.2em;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+}

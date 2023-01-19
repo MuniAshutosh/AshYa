@@ -1,0 +1,11 @@
+section.intro-animation {
+  background-color: #3d3d41;
+  place-items: center;
+  z-index: 3;
+}
+
+section.intro-animation svg {
+  height: 100%;
+  width: 70vw;
+  max-height: 40vh;
+}
