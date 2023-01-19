@@ -90,7 +90,7 @@ ScrollTrigger.create({
   trigger: '.engagement',
   // start: 'bottom top',
   once: true,
-  markers: true,
+  // markers: true,
   onEnter: function () {
     gsap.fromTo(
       'img.done',
