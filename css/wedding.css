@@ -44,10 +44,12 @@
 }
 
 .varmala-hawan {
-  height: 35%;
+  height: 36%;
   position: relative;
   top: -13%;
-  left: -8%;
+  left: -9%;
+  scale: 0.9;
+  z-index: -1;
 }
 
 .wedding-page .varmala {
