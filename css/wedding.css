@@ -44,21 +44,24 @@
 }
 
 .varmala-hawan {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   height: 36%;
-  position: relative;
-  top: -13%;
-  left: -9%;
   scale: 0.9;
   z-index: -1;
+  transform: translateY(-78px) scale(0.9);
 }
 
 .wedding-page .varmala {
-  position: absolute;
+  position: relative;
   z-index: -2;
   top: -33px;
 }
 .varmala-hawan .hawan {
-  position: absolute;
-  transform: translateX(100px) translateY(193px) scale(0.6);
+  position: relative;
+  transform: scale(0.6);
   z-index: -1;
+  top: -199px;
+  left: -10px;
 }
