@@ -1,7 +1,8 @@
 img.done {
   object-fit: contain;
-  transform: translateY(-40px);
   opacity: 0;
+  transform: translate(0px, 177px);
+  height: 300px;
 }
 
 .engagement {

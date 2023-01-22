@@ -10,7 +10,8 @@
   grid-template-rows: 1fr;
   place-items: center;
   overflow: hidden;
-  /* justify-self: center; */
+  max-width: 408px;
+  justify-self: center;
 }
 
 .intro-img {
@@ -23,7 +24,7 @@ video {
   max-width: 100%;
   grid-row: 1/2;
   mix-blend-mode: lighten;
-  transform: scale(1.36);
+  transform: scale(1.23);
   filter: invert();
 }
 
