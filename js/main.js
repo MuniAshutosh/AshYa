@@ -73,7 +73,7 @@ tl.to(
   .from('.chevron-container', { opacity: 0 }, '>+3');
 
 // TODO: Add the scroll down animation
-tl.timeScale(5);
+// tl.timeScale(5);
 
 tl.call(
   function () {
