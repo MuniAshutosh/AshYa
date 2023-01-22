@@ -30,3 +30,30 @@
 .main {
   scroll-snap-type: y mandatory;
 }
+
+.separate {
+  border-bottom: 1px solid #b3b04f;
+  margin: 2rem 0;
+}
+
+.shadow {
+  box-shadow: 0 10px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%) !important;
+}
+
+section.separte::after {
+  content: '';
+  background-image: url(../assets/549.jpg);
+  background-size: contain;
+  height: 9vh;
+  margin-block: 1em;
+}
+
+section.separte_2::after {
+  content: '';
+  background-image: url(../assets/549.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  height: 4vh;
+  margin-block: 1em;
+}
