@@ -40,3 +40,12 @@
 .reception .location {
   margin-top: auto;
 }
+
+.standing-shiloute {
+  display: flex;
+  justify-content: center;
+}
+
+.standing-shiloute img {
+  width: 90%;
+}

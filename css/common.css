@@ -11,6 +11,14 @@
   }
 }
 
+body {
+  overflow-x: hidden !important;
+}
+
+.main {
+  scroll-snap-type: y mandatory;
+}
+
 section {
   display: grid;
   height: 100vh;
@@ -30,11 +38,6 @@ section {
 
 .object-fit-cover {
   object-fit: cover;
-}
-
-.main {
-  scroll-snap-type: y mandatory;
-  overflow-x: hidden;
 }
 
 .separate {
