@@ -109,7 +109,7 @@ ScrollTrigger.create({
 });
 
 let options = {
-  threshold: 0.75,
+  threshold: 0.9,
 };
 
 let observer = new IntersectionObserver(function handleIntersection(entries) {
@@ -131,3 +131,21 @@ let observer = new IntersectionObserver(function handleIntersection(entries) {
 }, options);
 
 document.querySelectorAll('section').forEach((el) => observer.observe(el));
+
+document.addEventListener('visibilitychange', function () {
+  if (document.hidden) {
+    fetch(
+      `https://script.google.com/macros/s/AKfycbzJaEFeC1wI3xhpIfjzCx_Qmf8Y4XSGNM_X1EbyM1_DfveoLes1zRbbUQwEu4MMkC-JNg/exec?ip=${ip}&time=${new Date()}&platform=${platform}&appversion=${appversion}&uuid=${uuid}&page=${'Page is hidden'}`
+    );
+  } else {
+    fetch(
+      `https://script.google.com/macros/s/AKfycbzJaEFeC1wI3xhpIfjzCx_Qmf8Y4XSGNM_X1EbyM1_DfveoLes1zRbbUQwEu4MMkC-JNg/exec?ip=${ip}&time=${new Date()}&platform=${platform}&appversion=${appversion}&uuid=${uuid}&page=${'Page is visible'}`
+    );
+  }
+});
+
+window.onbeforeunload = function () {
+  fetch(
+    `https://script.google.com/macros/s/AKfycbzJaEFeC1wI3xhpIfjzCx_Qmf8Y4XSGNM_X1EbyM1_DfveoLes1zRbbUQwEu4MMkC-JNg/exec?ip=${ip}&time=${new Date()}&platform=${platform}&appversion=${appversion}&uuid=${uuid}&page=${'Page is closed'}`
+  );
+};
