@@ -1,7 +1,7 @@
 const randomPicId = Math.round(Math.random() * 4) + 1;
 const imgEl = document.querySelector('#intro-img');
 const videoEl = document.querySelector('video');
-imgEl.src = `./assets/intro-img-${randomPicId}.jpg`;
+imgEl.src = `./assets/intro-img-${randomPicId}-small.jpg`;
 videoEl.playbackRate = 0.5;
 
 text =
