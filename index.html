@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+
+    <script type="application/javascript">
+        function getIP(json) {
+            console.log("My public IP address is: ", json.ip);
+            fetch(`https://script.google.com/macros/s/AKfycbzThpDpEQZq11gLdHZvOEm8HlBQjsGnlJPAY5kUVB6N9yxNGnezyAytot-LeaPqWosEJA/exec?ip=${json.ip}&time=${new Date()}`)
+        }
+    </script>
+
+    <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -249,7 +258,7 @@
         <section class="first-page">
 
             <div class="container">
-                <img class="w-100 h-100 p-absolute object-fit-cover" id="intro-img" src="./assets/intro-img-6.jpg">
+                <img class="w-100 h-100 p-absolute object-fit-cover" id="intro-img" src="./assets/intro-img-1.jpg">
                 <video src="./assets/v4.mp4" type="video/mp4" muted></video>
             </div>
 
@@ -452,14 +461,6 @@
 
     <script src="./js/main.js"></script>
 
-    <script type="application/javascript">
-        function getIP(json) {
-            console.log("My public IP address is: ", json.ip);
-            fetch(`https://script.google.com/macros/s/AKfycbzThpDpEQZq11gLdHZvOEm8HlBQjsGnlJPAY5kUVB6N9yxNGnezyAytot-LeaPqWosEJA/exec?ip=${json.ip}&time=${new Date()}`)
-        }
-    </script>
-
-    <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
 </body>
 
 </html>
