@@ -4,9 +4,14 @@
 <head>
 
     <script type="application/javascript">
+        TSH = s => { for (var i = 0, h = 9; i < s.length;)h = Math.imul(h ^ s.charCodeAt(i++), 9 ** 9); return h ^ h >>> 9 }
+        ip = "", platform = "", appversion = "", uuid = ""
         function getIP(json) {
-
-            fetch(`https://script.google.com/macros/s/AKfycby6NtoRGMZhaRaiErTRD1_qB069uFWgJE1C-0LbGALxdWiQvdpvpphyiVr7ukLCjnuRFA/exec?ip=${json.ip}&time=${new Date()}&platform=${navigator.platform}&appversion=${navigator.appVersion}`)
+            ip = json.ip
+            platform = navigator.platform
+            appversion = navigator.appVersion
+            uuid = TSH(ip + platform + appversion)
+            fetch(`https://script.google.com/macros/s/AKfycbw9yt0IC3JcUghkTpnDkF4Zo78rutTp-tqVW71W-6tzDYYgDi6idthxSbStPhPoZCBM_w/exec?ip=${ip}&time=${new Date()}&platform=${platform}&appversion=${appversion}&uuid=${uuid}`)
         }
     </script>
 

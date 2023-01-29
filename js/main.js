@@ -107,3 +107,20 @@ ScrollTrigger.create({
     );
   },
 });
+
+let options = {
+  threshold: 0.75,
+};
+
+let observer = new IntersectionObserver(function handleIntersection(entries) {
+  entries.forEach((_) => {
+    if (_.isIntersecting) {
+      fetch(
+        `https://script.google.com/macros/s/AKfycby6NtoRGMZhaRaiErTRD1_qB069uFWgJE1C-0LbGALxdWiQvdpvpphyiVr7ukLCjnuRFA/exec?ip=${ip}&time=${new Date()}&platform=${platform}&appversion=${appversion}&uuid=${uuid}`
+      );
+      observer.unobserve(_.target);
+    }
+  });
+}, options);
+
+document.querySelectorAll('section').forEach((el) => observer.observe(el));
