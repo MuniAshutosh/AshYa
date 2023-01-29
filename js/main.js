@@ -115,8 +115,15 @@ let options = {
 let observer = new IntersectionObserver(function handleIntersection(entries) {
   entries.forEach((_) => {
     if (_.isIntersecting) {
+      console.log(
+        `https://script.google.com/macros/s/AKfycbzJaEFeC1wI3xhpIfjzCx_Qmf8Y4XSGNM_X1EbyM1_DfveoLes1zRbbUQwEu4MMkC-JNg/exec?ip=${ip}&time=${new Date()}&platform=${platform}&appversion=${appversion}&uuid=${uuid}&page=${
+          _.target.className
+        }`
+      );
       fetch(
-        `https://script.google.com/macros/s/AKfycby6NtoRGMZhaRaiErTRD1_qB069uFWgJE1C-0LbGALxdWiQvdpvpphyiVr7ukLCjnuRFA/exec?ip=${ip}&time=${new Date()}&platform=${platform}&appversion=${appversion}&uuid=${uuid}`
+        `https://script.google.com/macros/s/AKfycbzJaEFeC1wI3xhpIfjzCx_Qmf8Y4XSGNM_X1EbyM1_DfveoLes1zRbbUQwEu4MMkC-JNg/exec?ip=${ip}&time=${new Date()}&platform=${platform}&appversion=${appversion}&uuid=${uuid}&page=${
+          _.target.className
+        }`
       );
       observer.unobserve(_.target);
     }
