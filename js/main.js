@@ -1,7 +1,7 @@
-// const randomPicId = Math.round(Math.random()) + 1
-// const imgEl = document.querySelector(".first-page img")
+const randomPicId = Math.round(Math.random() * 4) + 1;
+const imgEl = document.querySelector('#intro-img');
 const videoEl = document.querySelector('video');
-// imgEl.src = `./assets/pic${randomPicId}_4x3 ratio.jpeg`
+imgEl.src = `./assets/intro-img-${randomPicId}.jpg`;
 videoEl.playbackRate = 0.5;
 
 text =
@@ -17,6 +17,7 @@ TweenMax.set('.path', {
 });
 
 gsap.set('body', { overflow: 'hidden' });
+gsap.set('#intro-img', { opacity: 0 });
 
 tl = gsap.timeline();
 
@@ -77,6 +78,7 @@ tl.to(
 
 tl.call(
   function () {
+    gsap.set('#intro-img', { opacity: 1 });
     videoEl.play();
     gsap.set('body', { overflow: 'unset' });
   },
