@@ -30,12 +30,10 @@ let MACRO = '';
 
 fetch(CONFIG)
   .then((res) => {
-    console.log(res);
     return res.json();
   })
   .then((res) => {
     MACRO = res.MACRO;
-    console.debug(MACRO + 'debug');
   });
 let ip = '',
   platform = '',
@@ -47,13 +45,6 @@ let options = {
 };
 
 let currentSectionVisible = 'intro';
-
-// function getIP(json) {
-//   ip = json.ip;
-//   platform = navigator.platform;
-//   appversion = navigator.appVersion;
-//   uuid = TSH(ip + platform + appversion);
-// }
 
 window.onload = function () {
   myCanvas.height = document.body.clientHeight;
