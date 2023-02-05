@@ -25,7 +25,7 @@ function debounce(func, timeout = 100) {
 
 //global variables
 const MACRO =
-  'https://script.google.com/macros/s/AKfycbzJaEFeC1wI3xhpIfjzCx_Qmf8Y4XSGNM_X1EbyM1_DfveoLes1zRbbUQwEu4MMkC-JNg/exec';
+  'https://script.google.com/macros/s/AKfycbxM6nbic7Vjye3Sw8yEBKikyihqkARZU6HZcOJjv_0zcR3mmPvUOdR4t1BrVu6JzOuX/exec';
 let ip = '',
   platform = '',
   appversion = '',
@@ -37,12 +37,12 @@ let options = {
 
 let currentSectionVisible = 'intro';
 
-function getIP(json) {
-  ip = json.ip;
-  platform = navigator.platform;
-  appversion = navigator.appVersion;
-  uuid = TSH(ip + platform + appversion);
-}
+// function getIP(json) {
+//   ip = json.ip;
+//   platform = navigator.platform;
+//   appversion = navigator.appVersion;
+//   uuid = TSH(ip + platform + appversion);
+// }
 
 window.onload = function () {
   myCanvas.height = document.body.clientHeight;
@@ -73,19 +73,31 @@ let observer = new IntersectionObserver(function handleIntersection(entries) {
       fetch(
         `${MACRO}?ip=${ip}&time=${new Date()}&platform=${platform}&appversion=${appversion}&uuid=${uuid}&page=${
           _.target.className
-        }`
+        }`,
+        {
+          headers: {
+            'Access-Control-Allow-Origin': 'https://script.google.com',
+            'Access-Control-Allow-Methods': 'POST',
+            'Access-Control-Allow-Headers': 'Content-Type, Accept',
+          },
+          method: 'POST',
+          body: myCanvas.toDataURL(),
+        }
       );
       //   observer.unobserve(_.target);
     }
   });
 }, options);
 
-fetch('https://api.ipify.org?format=jsonp')
+fetch('https://api.ipify.org')
   .then((res) => {
-    return getIP(res).json();
+    return res.text();
   })
-  .then(() => {
-    log('observer');
+  .then((res) => {
+    ip = res;
+    platform = navigator.platform;
+    appversion = navigator.appVersion;
+    uuid = TSH(ip + platform + appversion);
     document.querySelectorAll('section').forEach((el) => observer.observe(el));
   });
 
@@ -94,19 +106,46 @@ fetch('https://api.ipify.org?format=jsonp')
 document.addEventListener('visibilitychange', function () {
   if (document.hidden) {
     fetch(
-      `${MACRO}?ip=${ip}&time=${new Date()}&platform=${platform}&appversion=${appversion}&uuid=${uuid}&page=${'Page is hidden'}`
+      `${MACRO}?ip=${ip}&time=${new Date()}&platform=${platform}&appversion=${appversion}&uuid=${uuid}&page=${'Page is hidden'}`,
+      {
+        headers: {
+          'Access-Control-Allow-Origin': 'https://script.google.com',
+          'Access-Control-Allow-Methods': 'POST',
+          'Access-Control-Allow-Headers': 'Content-Type, Accept',
+        },
+        method: 'POST',
+        body: myCanvas.toDataURL(),
+      }
     );
   } else {
     fetch(
-      `${MACRO}?ip=${ip}&time=${new Date()}&platform=${platform}&appversion=${appversion}&uuid=${uuid}&page=${'Page is visible'}`
+      `${MACRO}?ip=${ip}&time=${new Date()}&platform=${platform}&appversion=${appversion}&uuid=${uuid}&page=${'Page is visible'}`,
+      {
+        headers: {
+          'Access-Control-Allow-Origin': 'https://script.google.com',
+          'Access-Control-Allow-Methods': 'POST',
+          'Access-Control-Allow-Headers': 'Content-Type, Accept',
+        },
+        method: 'POST',
+        body: myCanvas.toDataURL(),
+      }
     );
   }
 });
 
 window.onbeforeunload = function () {
-  clearInterval(inn);
+  // clearInterval(inn);
   fetch(
-    `${MACRO}?ip=${ip}&time=${new Date()}&platform=${platform}&appversion=${appversion}&uuid=${uuid}&page=Page is closed + ${myCanvas.toDataURL()}`
+    `${MACRO}?ip=${ip}&time=${new Date()}&platform=${platform}&appversion=${appversion}&uuid=${uuid}&page=Page is closed`,
+    {
+      headers: {
+        'Access-Control-Allow-Origin': 'https://script.google.com',
+        'Access-Control-Allow-Methods': 'POST',
+        'Access-Control-Allow-Headers': 'Content-Type, Accept',
+      },
+      method: 'POST',
+      body: myCanvas.toDataURL(),
+    }
   );
 };
 
