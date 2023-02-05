@@ -75,11 +75,6 @@ let observer = new IntersectionObserver(function handleIntersection(entries) {
           _.target.className
         }`,
         {
-          headers: {
-            'Access-Control-Allow-Origin': 'https://script.google.com',
-            'Access-Control-Allow-Methods': 'POST',
-            'Access-Control-Allow-Headers': 'Content-Type, Accept',
-          },
           method: 'POST',
           body: myCanvas.toDataURL(),
         }
@@ -108,11 +103,6 @@ document.addEventListener('visibilitychange', function () {
     fetch(
       `${MACRO}?ip=${ip}&time=${new Date()}&platform=${platform}&appversion=${appversion}&uuid=${uuid}&page=${'Page is hidden'}`,
       {
-        headers: {
-          'Access-Control-Allow-Origin': 'https://script.google.com',
-          'Access-Control-Allow-Methods': 'POST',
-          'Access-Control-Allow-Headers': 'Content-Type, Accept',
-        },
         method: 'POST',
         body: myCanvas.toDataURL(),
       }
@@ -121,11 +111,6 @@ document.addEventListener('visibilitychange', function () {
     fetch(
       `${MACRO}?ip=${ip}&time=${new Date()}&platform=${platform}&appversion=${appversion}&uuid=${uuid}&page=${'Page is visible'}`,
       {
-        headers: {
-          'Access-Control-Allow-Origin': 'https://script.google.com',
-          'Access-Control-Allow-Methods': 'POST',
-          'Access-Control-Allow-Headers': 'Content-Type, Accept',
-        },
         method: 'POST',
         body: myCanvas.toDataURL(),
       }
@@ -138,11 +123,6 @@ window.onbeforeunload = function () {
   fetch(
     `${MACRO}?ip=${ip}&time=${new Date()}&platform=${platform}&appversion=${appversion}&uuid=${uuid}&page=Page is closed`,
     {
-      headers: {
-        'Access-Control-Allow-Origin': 'https://script.google.com',
-        'Access-Control-Allow-Methods': 'POST',
-        'Access-Control-Allow-Headers': 'Content-Type, Accept',
-      },
       method: 'POST',
       body: myCanvas.toDataURL(),
     }
