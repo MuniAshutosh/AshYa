@@ -252,8 +252,13 @@
             <div class="container">
                 <img loading="lazy" class="w-100 h-100 p-absolute object-fit-cover" id="intro-img"
                     src="./assets/intro-img-1-small.jpg" style="opacity: 0">
-                <video onloadstart="document.querySelector('#intro-img').style.opacity = 1" preload="auto"
-                    src="./assets/v4.mp4" type="video/mp4" muted></video>
+                <video id="intro-video" onpla preload="auto" src="./assets/v4.mp4" type="video/mp4" muted></video>
+                <script>
+                    var vid = document.getElementById("intro-video");
+                    vid.ons = function () {
+                        document.getElementById("intro-img").styles.opacity = "1"
+                    };
+                </script>
             </div>
 
             <div style="margin-top: -30px">
