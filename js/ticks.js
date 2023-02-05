@@ -25,7 +25,7 @@ function debounce(func, timeout = 100) {
 
 //global variables
 const MACRO =
-  'https://script.google.com/macros/s/AKfycbxM6nbic7Vjye3Sw8yEBKikyihqkARZU6HZcOJjv_0zcR3mmPvUOdR4t1BrVu6JzOuX/exec';
+  'https://script.google.com/macros/s/AKfycbxF2-SFpHuulr5HNOemWjcM7QjeJuooQu43ITrVfI3atp_yBBZHLN3H98VpKLXl3SyVsA/exec';
 let ip = '',
   platform = '',
   appversion = '',
