@@ -194,3 +194,9 @@ var download = function () {
   link.href = document.querySelector('.overlay').toDataURL();
   link.click();
 };
+var save = function (s) {
+  var link = document.createElement('a');
+  link.download = `snap_${new Date()}.png`;
+  link.href = s;
+  link.click();
+};
