@@ -82,7 +82,7 @@ let observer = new IntersectionObserver(function handleIntersection(entries) {
 
 fetch('https://api.ipify.org?format=jsonp')
   .then((res) => {
-    getIP(res);
+    return getIP(res).json();
   })
   .then(() => {
     log('observer');
