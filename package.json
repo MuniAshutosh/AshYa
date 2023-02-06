@@ -2,7 +2,8 @@
     "scripts": {
         "inlineStyle": "inline-script-tags dev.html index.html",
         "inlineScripts": "inline-stylesheets index.html .",
-        "build": "npm run inlineStyle && npm run inlineScripts"
+        "build": "npm run inlineStyle && npm run inlineScripts",
+        "deploy": "npm run build && git add . && git commit -m \"build stuff\" && git push"
     },
     "devDependencies": {
         "inline-scripts": "^1.7.4"
