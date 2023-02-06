@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "jsCopy": "mkdir build\\js && copy .\\js\\* .\\build\\js\\",
+    "cssCopy": "mkdir build\\css && copy .\\css\\* .\\build\\css\\",
+    "inlineStyle": "inline-script-tags index.html build/index.html",
+    "inlineScripts": "inline-stylesheets build/index.html .",
+    "cleanUp": "rmdir /s /q build\\js && rmdir /s /q build\\css",
+    "build": "npm run jsCopy && npm run cssCopy && npm run inlineStyle && npm run inlineScripts && npm run cleanUp"
+  },
+  "devDependencies": {
+    "inline-scripts": "^1.7.4"
+  }
+}
