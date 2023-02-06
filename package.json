@@ -1,10 +1,10 @@
 {
   "scripts": {
-    "jsCopy": "mkdir build\\js && copy .\\js\\* .\\build\\js\\",
-    "cssCopy": "mkdir build\\css && copy .\\css\\* .\\build\\css\\",
-    "inlineStyle": "inline-script-tags index.html build/index.html",
-    "inlineScripts": "inline-stylesheets build/index.html .",
-    "cleanUp": "rmdir /s /q build\\js && rmdir /s /q build\\css",
+    "jsCopy": "mkdir docs\\js && copy .\\js\\* .\\docs\\js\\",
+    "cssCopy": "mkdir docs\\css && copy .\\css\\* .\\docs\\css\\",
+    "inlineStyle": "inline-script-tags index.html docs/index.html",
+    "inlineScripts": "inline-stylesheets docs/index.html .",
+    "cleanUp": "rmdir /s /q docs\\js && rmdir /s /q docs\\css",
     "build": "npm run jsCopy && npm run cssCopy && npm run inlineStyle && npm run inlineScripts && npm run cleanUp"
   },
   "devDependencies": {
