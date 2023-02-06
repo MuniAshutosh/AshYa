@@ -1,0 +1,67 @@
+.wedding-page {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.wedding-page .title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  background: url(../assets/knot.png) center;
+  background-repeat: no-repeat;
+  filter: blur(50%);
+  object-fit: cover;
+  width: 100%;
+  max-width: 100%;
+  height: 38%;
+  background-position-y: -148px;
+}
+
+.wedding-page p {
+  margin-block: 0;
+}
+
+.wedding-page .location {
+  padding-bottom: 16px;
+}
+
+.wedding-page .timing {
+  padding-bottom: 16px;
+}
+
+.wedding-page .timing .date .icon::before {
+  background-image: url('../assets/cal-22.svg');
+}
+
+.wedding-page .timing .time .icon::before {
+  background-image: url('../assets/clock-7_30.svg');
+}
+
+.wedding-page .location {
+  margin-top: auto;
+}
+
+.varmala-hawan {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 36%;
+  scale: 0.9;
+  z-index: -1;
+  transform: translateY(-78px) scale(0.9);
+}
+
+.wedding-page .varmala {
+  position: relative;
+  z-index: -2;
+  top: -33px;
+}
+.varmala-hawan .hawan {
+  position: relative;
+  transform: scale(0.6);
+  z-index: -1;
+  top: -199px;
+  left: -10px;
+}

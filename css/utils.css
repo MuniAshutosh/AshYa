@@ -1,0 +1,15 @@
+d-flex {
+  display: flex;
+}
+
+d-grid {
+  display: grid;
+}
+
+justify-items-center {
+  justify-items: center;
+}
+
+.hidden {
+  display: none;
+}
